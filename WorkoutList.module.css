@@ -1,0 +1,155 @@
+/* List controls styling */
+.listControls {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  animation: slideIn 0.5s ease-out;
+}
+
+.listControls input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.listControls select {
+  width: auto;
+  min-width: 150px;
+}
+
+/* Workout list styling */
+.workoutList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workoutItem {
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #2ecc71;
+  animation: fadeIn 0.5s;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.workoutItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #000000;
+}
+
+.workoutInfo {
+  flex: 1;
+}
+
+.workoutName {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.workoutDetails {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.workoutCalories {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.workoutDate {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.deleteBtn {
+  background-color: transparent;
+  color: #2ecc71;
+  padding: 8px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Empty state styling */
+.emptyMessage {
+  text-align: center;
+  padding: 40px 20px;
+  color: #777;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+/* Animation classes for TransitionGroup */
+.listItemEnter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.listItemEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.listItemExit {
+  opacity: 1;
+}
+
+.listItemExitActive {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Additional animations */
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+  .listControls {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .workoutItem {
+    padding: 12px 15px;
+  }
+}

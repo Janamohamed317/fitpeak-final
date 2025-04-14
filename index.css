@@ -1,0 +1,62 @@
+/* Modern CSS with variables for consistent styling */
+:root {
+  --primary-color: #000000;
+  --primary-dark: #1a1a1a;
+  --secondary-color: #2ecc71;
+  --secondary-dark: #27ae60;
+  --accent-color: #2ecc71;
+  --dark-bg: #000000;
+  --light-bg: #f5f5f5;
+  --text-light: #f8f9fa;
+  --text-dark: #2c3e50;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.deleting {
+  animation: slideOut 0.3s forwards;
+}
+
+@keyframes slideOut {
+  to { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

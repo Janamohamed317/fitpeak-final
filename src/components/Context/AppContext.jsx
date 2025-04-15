@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState } from "react";
 
-export const AppContext = createContext(null);
+export const AppContext = createContext(true);
 
 const AppContextProvider = (props) => {
 

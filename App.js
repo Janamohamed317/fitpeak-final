@@ -15,6 +15,8 @@ import ChartSection from './components/ChartSection';
 import StatsSection from './components/StatsSection';
 import Footer from './components/Footer';
 import Notification from './components/Notification';
+import BlogInput from './components/BlogInput';
+import BlogPosts from './components/BlogPosts';
 
 // Add FontAwesome icons to library
 library.add(
@@ -31,6 +33,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('newest');
   const [chartPeriod, setChartPeriod] = useState('all');
+  const [posts, setPosts] = useState([]);
 
   // Filter workouts based on search term, sort option, and chart period
   const filterWorkouts = useCallback((search, sort, period) => {
@@ -206,6 +209,11 @@ function App() {
     return `${streak} day${streak !== 1 ? 's' : ''}`;
   };
 
+  const addPost = (title, content) => {
+    const newPost = { title, content };
+    setPosts([newPost, ...posts]);
+  };
+  
   return (
     <div className="app">
       <div className="container">
@@ -234,8 +242,16 @@ function App() {
           bestWorkout={getBestWorkout()}
           workoutStreak={getWorkoutStreak()}
         />
+
+          
       </div>
       
+      <div className="container">
+            <div className="header">User Blogs</div>
+            <BlogInput onAddPost={addPost} />
+            <BlogPosts posts={posts} />
+        </div>
+
       <Footer />
       
       {notification && (

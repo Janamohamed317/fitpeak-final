@@ -3,7 +3,7 @@ import styles1 from './Signup.module.css';
 import signupimg from '../../assets/login.png';
 import { AppContext } from '../Context/AppContext';
 import { useNavigate } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 
 function Signup() {
     const [email, setEmail] = useState('');

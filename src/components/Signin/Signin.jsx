@@ -3,6 +3,7 @@ import styles from "./Signin.module.css";
 import login_img from "../../assets/login.png";
 import { AppContext } from "../Context/AppContext";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 function Signin() {
   const [email, setEmail] = useState("");
